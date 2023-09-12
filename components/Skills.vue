@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10">
     <h4 class="mt-6 text-4xl text-gray-900 font-bold">
-      The Skills<span class="text-sky-400">.</span>
+      The Skills<span class="text-sky-400">!</span>
     </h4>
     <ul class="mt-6 mb-9 flex flex-wrap items-center">
       <li class="text-gray-400 mr-2">
@@ -124,9 +124,6 @@
       <li class="text-gray-400 mr-2 text-5xl">
         Adaptability
       </li>
-      <li class="text-gray-400 mr-2 text-sm">
-        Goal Setting
-      </li>
       <li class="text-gray-400 mr-2 font-bold text-6xl">
         Mentoring & Coaching
       </li>
@@ -165,6 +162,9 @@
       </li>
       <li class="text-gray-400 mr-2 text-5xl">
         Continuous Learning
+      </li>
+      <li class="text-gray-400 mr-2 text-xl font-bold">
+        Goal Setting
       </li>
     </ul>
   </div>

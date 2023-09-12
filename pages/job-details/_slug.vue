@@ -5,23 +5,23 @@
     </div>
     <div class="md:w-2/3">
       <div class="pt-6 mb-6">
-        <h1 class="text-4xl text-gray-900 font-bold">
+        <h4 class="mt-6 text-4xl text-gray-900 font-bold">
           {{ job.position }} <span class="text-sky-400">@</span> {{ job.company }}
-        </h1>
+        </h4>
         <time class="text-gray-400">{{ job?.startDate }} - {{ job?.endDate }}</time>
       </div>
-      <h6 class="mb-6 text-lg text-gray-800">
-        The Company<span class="text-sky-400">_</span>
-      </h6>
+      <h4 class="mt-6 text-2xl text-gray-900 font-bold">
+        The Company<span class="text-sky-400">!</span>
+      </h4>
       <p class="mb-6 text-gray-500 md:text-justify print:text-justify">
         {{ job?.company_bio }}
       </p>
-      <h6 class="mb-6 text-lg text-gray-800">
-        The Role<span class="text-sky-400">_</span>
-      </h6>
+      <h4 class="mt-6 text-2xl text-gray-900 font-bold">
+        The Role<span class="text-sky-400">!</span>
+      </h4>
       <ul>
         <li v-for="highlight in job.highlights" class="mb-6 text-gray-500 md:text-justify print:text-justify">
-          <span class="text-sky-400 text-xl font-bold">•</span> {{ highlight }}
+          <span class="text-sky-400 text-xl font-bold">-</span> {{ highlight }}
         </li>
       </ul>
       <p>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import siteMetaInfo from "@/data/sitemetainfo";
+import siteMetaData from "@/data/siteMetaData";
 
 export default {
   async asyncData({ params }){
@@ -45,14 +45,14 @@ export default {
     },
   },
   head: {
-    title: siteMetaInfo.title,
+    title: siteMetaData.title,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: siteMetaInfo.description,
+        content: siteMetaData.description,
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],

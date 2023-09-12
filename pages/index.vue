@@ -8,34 +8,36 @@
       <hr class="mb-0 mt-0" />
       <Skills :resume="resume" />
       <hr class="mb-0 mt-0" />
-      <Favorites :resume="resume" />
+      <Tools :resume="resume" />
       <hr class="mb-0 mt-0 print:invisible" />
-      <TimeLine :resume="resume" />
+      <Journey :resume="resume" />
     </div>
   </div>
 </template>
 
 <script>
-import siteMetaInfo from "@/data/sitemetainfo";
+import siteMetaData from "@/data/siteMetaData";
+import AuthorCard from "@/components/AuthorCard.vue";
+import AuthorIntro from "@/components/AuthorIntro.vue";
+import Skills from "@/components/Skills.vue";
+import Tools from '@/components/Tools.vue';
+import Journey from '@/components/Journey.vue';
+
 export default {
+  components: { AuthorCard, AuthorIntro, Skills, Tools, Journey },
   async asyncData(){
     const resume = await fetch('https://raw.githubusercontent.com/lept-github/resume/master/luis-pacehco-resume.json').then(res => res.json());
     return { resume };
   },
-  data() {
-    return {
-      siteMetaInfo: siteMetaInfo,
-    };
-  },
   head: {
-    title: siteMetaInfo.title,
+    title: siteMetaData.title,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: siteMetaInfo.description,
+        content: siteMetaData.description,
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],

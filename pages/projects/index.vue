@@ -1,12 +1,12 @@
 <template>
-  <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+  <div class="mt-10 max-w-2xl mx-auto">
+    <div class="mt-10 mb-6">
+      <h1 class="text-6xl font-extrabold text-gray-900">
         Projects
       </h1>
     </div>
     <div class="flex flex-wrap -m-3">
-      <project-card
+      <ProjectCard
         v-for="item in projectsData"
         :key="item.title"
         :title="item.title"
@@ -22,8 +22,11 @@
 </template>
 
 <script>
-import projectsData from "../../data/projects";
+import projectsData from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard.vue";
+
 export default {
+  components: { ProjectCard },
   data() {
     return {
       projectsData: projectsData,

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "pdf": "wkhtmltopdf --page-size A4 --margin-top 10mm --margin-bottom 0mm localhost:3000 ../resume/luis_pacheco_resume.pdf",
     "start": "nuxt",
     "build": "nuxt build && nuxt generate"
   },

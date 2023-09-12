@@ -1,7 +1,7 @@
 <template>
   <div class="mt-10">
     <h4 class="mt-6 text-4xl text-gray-900 font-bold">
-      The Tools<span class="text-sky-400">.</span>
+      The Tools<span class="text-sky-400">!</span>
     </h4>
     <ul class="mt-6 mb-9 flex flex-wrap items-center">
       <li>

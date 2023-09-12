@@ -1,20 +1,18 @@
 <template>
-  <div class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+  <div class="mt-10 max-w-2xl mx-auto">
+    <div class="mt-10 mb-6">
+      <h1 class="text-6xl font-extrabold text-gray-900">
         Blog
       </h1>
     </div>
-    <div class="space-y-16 mx-auto max-w-7xl">
-      <blog-item
-        v-for="article in articles"
-        :key="article.title"
-        :title="article.title"
-        :description="article.description"
-        :date="article.date"
-        :slug="article.slug"
-      ></blog-item>
-    </div>
+    <Article
+      v-for="article in articles"
+      :key="article.title"
+      :title="article.title"
+      :description="article.description"
+      :date="article.date"
+      :slug="article.slug"
+    ></Article>
   </div>
 </template>
 
@@ -32,12 +30,11 @@ export default {
         "date",
         "draft",
       ])
+      .where({ draft: false })
       .sortBy("date", "desc")
       .fetch();
 
-    return {
-      articles,
-    };
+    return { articles };
   },
   head: {
     title: "Luis Pacheco | Blog",
@@ -54,5 +51,3 @@ export default {
   },
 };
 </script>
-
-<style></style>
