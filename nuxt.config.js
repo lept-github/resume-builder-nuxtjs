@@ -15,6 +15,23 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-50535DDLXT',
+      },
+      {
+        innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-50535DDLXT');
+      `,
+        type: 'text/javascript',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
