@@ -33,7 +33,7 @@ export default {
     };
   },
   head: {
-    title: "Luis Pacheco | Projects",
+    title: "Luis Pacheco - Projects",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
